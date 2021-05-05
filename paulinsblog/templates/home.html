@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h2 padding: 70px;><b>Articles</b></h2>
+    </div>
+</div>
+{% for post in object_list %}
+<div>
+    <br/>
+    <div class="border border-secondary", style="padding: 15px;", style="text-align:justify;">
+        <br/>
+        <b><a href="{% url 'postdetails' post.pk %}">{{ post.title|safe }}</a></b>
+        <br/>
+        {{ post.intro|safe }}<br/><br/>
+        <small>Written by: {{ post.author }} on {{ post.date_published }}</small>
+        <br/>
+    </div>
+</div>
+{% endfor %}
+   
+
+
+{% endblock %}
+

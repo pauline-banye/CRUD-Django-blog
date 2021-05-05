@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h2>Welcome back VIP</h2>
+
+<div class="form-group" width=80%>
+<br/><br/>
+    <div style="width: 70%; text-align: left;">
+        <h5>What's your access code</h5>
+        <form method = 'POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Enter!</button>
+        </form> 
+        <div class="border-top pt-4">
+            <small class="text-muted">
+                <a href="{% url 'home' %}">Changed your mind?</a>
+            </small>
+        </div>    
+    </div>  
+</div>
+
+{% endblock %}

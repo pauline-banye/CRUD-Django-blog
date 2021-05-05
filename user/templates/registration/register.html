@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h2><b>Hi, ready to join the VIP's?</b></h2>
+<br/><br/>
+<div class="form-group">
+    <div style="text-align: left;">
+        <h6><b>Get an access code</b></h6>
+        <form method = 'POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Request!</button>
+        </form> 
+    </div>  
+</div>
+
+{% endblock %}

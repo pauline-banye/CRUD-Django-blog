@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2><b>Edit your profile.</b></h2>
+<br/><br/>
+<div class="form-group">
+    <div style="text-align: left;">
+        <h6><b>What would you like to change?</b></h6>
+        <form method = 'POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Update!</button>
+        </form> 
+    </div>  
+</div>
+
+{% endblock %}

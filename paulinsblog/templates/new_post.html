@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+{% if user.is_authenticated %}
+    
+    <h1><b>Share your knowledge</b></h1>
+    <div class="form-group">
+    <br/>
+        <form method = 'POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <hr>
+            <button type="submit" class="btn btn-primary">Done!!</button>
+        </form> 
+        <hr>
+        <div class="border-top pt-4">
+            <small class="text-muted">
+                <a href="{% url 'home' %}">Changed your mind?</a>
+            </small>
+        </div>  
+    </div>
+{% else %}
+    <h1><b>INTRUDER ALERT!!</b></h1>
+    <br/>
+    <h2>You need to <a href="{% url 'login' %}">sign in</a> to create or update a post</h2>
+
+{% endif %}
+{% endblock %}
