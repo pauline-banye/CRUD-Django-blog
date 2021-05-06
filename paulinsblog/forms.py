@@ -8,12 +8,11 @@ class BlogForms(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'post_image', 'author', 'post', 'date_published')
-        #fields = ('title', 'author', 'intro', 'post', 'date_published')
+        
 
         widgets = {
             'title' : forms.TextInput(attrs={'class':'form-control'}),
             'author' : forms.Select(attrs={'class':'form-control'}),
-            #'intro' : forms.TextInput(attrs={'class':'form-control'}),
             'post' : forms.Textarea(attrs={'class':'form-control'}),
             'date_published': NumberInput(attrs={'type':'datetime'}),
         }

@@ -44,7 +44,4 @@ class NewComment(CreateView):
         return super().form_valid(form) 
 
     success_url = reverse_lazy('home')
-
-
-#    fields = '_all_'
-#    fields = ('writer', 'review')
+    

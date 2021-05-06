@@ -16,7 +16,6 @@ class RegisterUser(generic.CreateView):
 class EditUser(generic.UpdateView):
     form_class = UpdateUserForm
     template_name = 'registration/editprofile.html'
-    #success_url = reverse_lazy('success')
     success_url = reverse_lazy('password_success')
 
     def get_object(self):
