@@ -96,5 +96,7 @@ This project is in progress. Like I mentioned earlier, this is my first attempt 
 ## Contact
 
 Created by Pauline Banye - feel free to contact me!
+
 Email - paulinebanye@gmail.com.
+
 GitHub - https://github.com/pauline-banye
