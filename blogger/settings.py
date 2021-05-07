@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-#from dotenv import load_dotenv
-#load_dotenv()
 
 import os
 import django_heroku
@@ -18,15 +16,6 @@ import dj_database_url
 from decouple import config
 
 from pathlib import Path
-
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
-
-
-
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,9 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'Optional default value')
+SECRET_KEY = config('SECRET_KEY', 'Optional default value')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+#DEBUG = os.getenv('DEBUG')
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
@@ -97,16 +88,30 @@ WSGI_APPLICATION = 'blogger.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': os.getenv('DATABASE_URL'),
+#}
+#DATABASE_URL=django.db.backends.postgresql://postgres:CANada@#@127.0.0.1:5432/paulinsblog
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': config('ENGINE'),
+        'NAME': config('NAME'),
+        'USER': config('USER'),
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
-#db_from_env = dj_database_url.config()
-#DATABASES['default'].update(db_from_env)
 
-#DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -152,14 +157,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-#if DEBUG:
-#    STATICFILES_DIRS = [
-#        os.path.join(BASE_DIR, 'static')
-#    ]
-#else:
-#    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [
