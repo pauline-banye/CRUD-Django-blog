@@ -40,7 +40,9 @@ Users can only post or comment on the site when signed in.
 #
 ## To-do list
 
-Complete profile pages of authors.  
+Complete profile pages of authors. 
+ 
+Make the site responsive
 
 Create a registration approval process.
 
@@ -88,6 +90,9 @@ Unfortunately, my data wasn't visible on my app at this stage. I eventually ran 
 
 If you are 
 interested in viewing the end result, the link to the app is https://paulinesblog.herokuapp.com/.  
+If you are using a phone, view it in desktop mode.
+
+Don't forget to leave a comment 👍
 
 #
 ## Status
