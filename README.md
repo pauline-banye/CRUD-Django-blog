@@ -22,6 +22,7 @@ Technologies used for this build include:
 Python 3.9,
 
 Django
+
 PostgreSql for the database.
 
 A complete list of installs is included in the requirements text.
