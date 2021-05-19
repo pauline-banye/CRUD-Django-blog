@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY', 'Optional default value')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 #DEBUG = os.getenv('DEBUG')
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -87,11 +87,6 @@ WSGI_APPLICATION = 'blogger.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-#DATABASES = {
-#    'default': os.getenv('DATABASE_URL'),
-#}
-#DATABASE_URL=django.db.backends.postgresql://postgres:CANada@#@127.0.0.1:5432/paulinsblog
 
 
 DATABASES = {
