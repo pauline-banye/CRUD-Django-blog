@@ -78,7 +78,7 @@ I created the app on heroku using the `heroku create paulinsblog` command. then 
 
 I ran into a few errors, one of which was the issue with staticfiles, I used `heroku config:set DISABLE_COLLECTSTATIC=1` to disable it.
 
-After a successful push, I had an issue with my data failing to showing up on my Heroku site. This was because my database on the local server was running on db.sqlite which Heroku does not support. 
+After a successful push, I had an issue with my data failing to show up on my Heroku site. This was because my database on the local server was running on db.sqlite which Heroku does not support. 
 
 I had to create a datadump into a json file,  install PostgreSql database and pgAdmin4 and set up a server on my local machine. 
 
